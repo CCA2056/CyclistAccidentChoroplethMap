@@ -1,0 +1,87 @@
+/**
+ * @license
+ * Copyright 2019 Google LLC. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0
+ */
+/* 
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map. 
+ */
+ #map {
+    height: 30vw;
+    width: 70%; /* Adjust as needed */
+  }
+  
+  /* 
+   * Optional: Makes the sample page fill the window. 
+   */
+  html,
+  body {
+    height: 100%;
+  }
+
+  h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+  }
+
+  button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+/* Container for buttons */
+.button-container {
+  display: flex;
+  justify-content: center; /* Centers buttons inside the container */
+}
+
+.map-chart-container{
+  display: flex;
+  flex-direction: row;
+}
+
+/* Style for the legend */
+#legend {
+  background: white;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid black;
+  font-size: 14px;
+}
+
+#legend h4 {
+  margin-top: 0;
+}
+
+#legend div {
+  display: flex;
+  align-items: center;
+}
+
+#legend span {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+#chart-container {
+  height: 30vw;
+  width: 30%; /* Adjust as needed */
+  display: flex;
+  align-items: center; /* Center the chart vertically */
+  justify-content: center; /* Center the chart horizontally */
+  padding: 20px;
+  box-sizing: border-box;
+}
+

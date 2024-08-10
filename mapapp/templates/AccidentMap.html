@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Bi-Safe</title>
+  {% load static %}
+  <!-- Including the CSS file -->
+  <link rel="stylesheet" type="text/css" href="{% static 'GoogleMapStyle.css' %}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <h3>Accident Map</h3>
+  <!--<div class="button-container">
+    <button id="switchAccidentMap">Switch to Accident Map</button>
+    <button id="switchNavigationMap">Switch to Navigation Map</button>
+  </div>-->
+
+  <div class="map-chart-container">
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <!-- The div element for the legend -->
+    <div id="legend">
+      <h4>Total Count of Cyclist Accident from Jan 2022 onwards</h4>
+      <div><span style="background-color: #EACDD2;"></span> Less than 30</div>
+      <div><span style="background-color: #D6A0A9;"></span> 31 - 60</div>
+      <div><span style="background-color: #C17985;"></span> 61 - 90</div>
+      <div><span style="background-color: #AD5765;"></span> 90 and above</div>
+    </div>
+
+    <!-- The div element for the bar chart -->
+    <div id="chart-container">
+      <canvas id="severityChart"></canvas>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- prettier-ignore -->
+  <!--Leave this part unformat otherwise 
+    Gooogle Map may not work correctly-->
+  <!-- Not a safe way to use API KEY here, will stroe in 
+     environment variable or use a server-side proxy later-->
+  <script>(g => {
+      var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => {
+        await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]);
+        e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load."));
+        a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a)
+      })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n))
+    })
+      ({ key: "AIzaSyB9NXOW77q_l10BdZ9Qjhmb42C9-TIHx4I", v: "weekly" });
+  </script>
+  <script src="{% static 'ChoroplethMapScript.js' %}"></script>
+</body>
+
+</html>
